@@ -28,11 +28,20 @@ Text-Cleanup-Fine-Tuning-Set/
 │   ├── data/
 │   │   ├── audio/               # Original audio recordings
 │   │   ├── whisper-transcripts/ # Raw Whisper ASR output
-│   │   ├── auto-cleanup/        # Automated cleanup (Gemini)
+│   │   ├── auto-cleanup/        # Sample 1 reference (Gemini)
 │   │   └── manual-cleanups/     # Human-edited ground truth
 │   ├── questions.json           # Question metadata
 │   ├── dataset.json             # Complete dataset metadata
 │   └── README.md               # Dataset-specific documentation
+│
+├── ai-analysis/                 # Fine-tuning planning & strategy
+│   ├── sample-size-recommendations.md  # Target sample counts
+│   ├── dataset-structure-mapping.md    # Component relationships
+│   └── model-candidates.md             # Audio-text models to fine-tune
+│
+├── divergence-analysis/         # Sample-level cleanup analysis
+│   ├── sample-1-analysis.md    # Divergence patterns in Sample 1
+│   └── README.md               # Analysis methodology
 │
 └── Tools for dataset creation
     ├── transcript_recorder.py   # GUI for recording and processing
