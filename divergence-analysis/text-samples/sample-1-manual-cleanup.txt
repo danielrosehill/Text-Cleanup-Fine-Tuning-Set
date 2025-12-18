@@ -1,0 +1,61 @@
+Over the course of the past year, during which I have worked with AI systems very extensively, my development method has come to be shaped by using them. 
+
+This doesn't necessarily mean that this is the method I woud use across the board. 
+
+Rather, it means that because I've seen that this is how to get to success, I've shifted my workflow accordingly.
+
+However, it's not necessarily how I would always approach projects. 
+
+But within the narrow realm lof agentic OR AI-assisted development, this is the current workflow. 
+
+I've gravitated to using voice.  This began approximately this time last year. I realized that voice is quicker than text entry - to state the obvious. 
+
+But that when you're using AI tools to work on a project, the key is gathering up that context data for the project. I was going to say that it's an alternative to RAG and context management, except that it's not!
+
+RAG remains very useful in general AI day-to-day work and prompting. You want to have something that knows you. 
+
+But if it's a software development project, much of that context is really ab initio. 
+
+There's no context data that's really going to help besides maybe knowledge of your preferred workflows. It's from scratch. This is what I want to find in the project. 
+
+So the reason that voice is so essential here is because I realized that if you can record 10 minutes of information and get in all the gritty details of what you're looking for, what you're not looking fo - that that makes a vast difference. 
+
+Because the AI tool starts from a very rounded understanding of the project: what it's to do, what it's not to do. It's never "set it and forget it," if you use that expression. But it's much closer to it. You find yourself spending far less time saying (to the AI tool), "no, no, no, that's not what I wanted at all. You've gone in the wrong direction." 
+
+And then you're thinking yourself, "wait, didn't I say that?" And you realize, no, humans naturally don't. It's not a human tendency to state everything with maximum specificity. 
+
+If I ask my wife, "please buy pita bread," I don't say, "please go to the market and buy six pita breads that are wrapped in plastic." 
+
+To minimize ambiguity, AI systems do want that kind of strange communication. 
+
+So that's where this becomes really useful. 
+
+So what I will do in practice - and that's why I'm explaining the voice stuff - is that I'll start with a voice recording. Right now, for example, I'm actually recording this file in Audacity and saving it into a repository. That's a very manual method. In other methods, I've experimented more elegant workflows. But it doesn't really matter. It's just about getting the audio captured, however you can find a way to do that. 
+
+Then I run that through a transcription tool to do some cleanup, to say, "organize this a bit!"
+
+And this is actually what the repository that I referred to is there for.
+
+I'm thinking it might be possible to fine tune an audio multimodal for exactly the level of transcription I want. This is the Goldilocks problem of this. You don't want it (AI) to go too far but you don't want it to go not far enough. 
+
+What I'll typically do is transcribe my file. I usually ask it to do two things: raw and spec. 
+
+The raw transcript is just kind of security. It's a backup of sorts. It's like "just in case the AI butchers the cleanup version, we have a capture of what was actually said without needing to listen back to the audio." But it's only for that purpose. 
+
+And then working on the development workflow with it, between turns, between sprints, saying "build this", and then debugging, like going into the code. 
+
+When working with some coding languages, it's fully agentic in the sense that I don't know the languages myself. In other cases, working with WordPress or Python, I have some grounding, at least, in the languages, and I can kind of do a little bit of tweaks and touch-ups.
+
+But more than that actually, it's evolving into me being there in a supervisory and ideation capacity (which sounds really lame!) 
+
+But it's kind of like thinking, "wait, what stack are we using? Does this make sense? Does this approach make sense? Could we do it this way?" 
+
+And then hard work of code generation happens with the agents doing that. 
+
+And I actually love this approach because it's much more fun for me to think about what we're building and how we're going to build this than it is to sit there writing lines of code, which is, I think ... I'm sure a lot of people maybe enjoy that stuff, but I don't personally. 
+
+So that's kind of summarises the development process. 
+
+And then it's testing and debugging and iterating upon features. 
+
+And mostly so far, it's been used for my own personal tools. But I'm working on a couple of broader projects at the moment as well.
