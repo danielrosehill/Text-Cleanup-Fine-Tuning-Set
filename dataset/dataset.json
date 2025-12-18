@@ -3,7 +3,7 @@
     "name": "Text Cleanup Fine-Tuning Dataset",
     "description": "Dataset for fine-tuning speech-to-text cleanup models",
     "version": "1.0.0",
-    "created": "2025-12-18T13:02:36.230926",
+    "created": "2025-12-18T13:15:12.145541",
     "author": "Daniel Rosehill",
     "license": "Private"
   },
@@ -26,10 +26,10 @@
       "question": "Describe your typical workflow when starting a new software development project. What are the first steps you take, what tools do you set up, and how do you organize your work?",
       "recorded": false,
       "files": {
-        "audio": "audio/1.mp3",
-        "whisper_transcript": "whisper-transcripts/1.txt",
-        "auto_cleanup": "auto-cleanup/1.txt",
-        "manual_cleanup": "manual-cleanups/1.txt"
+        "audio": "dataset/data/audio/1.mp3",
+        "whisper_transcript": "dataset/data/whisper-transcripts/1.txt",
+        "auto_cleanup": "dataset/data/auto-cleanup/1.txt",
+        "manual_cleanup": "dataset/data/manual-cleanups/1.txt"
       },
       "audio_metadata": {
         "duration_seconds": 367.4433333333333,

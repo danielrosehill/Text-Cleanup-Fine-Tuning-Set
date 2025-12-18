@@ -31,17 +31,18 @@ load_dotenv()
 
 # Configuration
 BASE_DIR = Path(__file__).parent
-QUESTIONS_FILE = BASE_DIR / "questions.json"
-AUDIO_DIR = BASE_DIR / "audio"
-WHISPER_DIR = BASE_DIR / "whisper-transcripts"
-AUTO_CLEANUP_DIR = BASE_DIR / "auto-cleanup"
-MANUAL_CLEANUP_DIR = BASE_DIR / "manual-cleanups"
+DATASET_DIR = BASE_DIR / "dataset"
+QUESTIONS_FILE = DATASET_DIR / "questions.json"
+AUDIO_DIR = DATASET_DIR / "data" / "audio"
+WHISPER_DIR = DATASET_DIR / "data" / "whisper-transcripts"
+AUTO_CLEANUP_DIR = DATASET_DIR / "data" / "auto-cleanup"
+MANUAL_CLEANUP_DIR = DATASET_DIR / "data" / "manual-cleanups"
 SYSTEM_PROMPT_FILE = BASE_DIR / "system-prompts" / "cleanup.md"
-DATASET_FILE = BASE_DIR / "dataset.json"
+DATASET_FILE = DATASET_DIR / "dataset.json"
 
 # Ensure directories exist
-for dir_path in [AUDIO_DIR, WHISPER_DIR, AUTO_CLEANUP_DIR, MANUAL_CLEANUP_DIR]:
-    dir_path.mkdir(exist_ok=True)
+for dir_path in [DATASET_DIR, DATASET_DIR / "data", AUDIO_DIR, WHISPER_DIR, AUTO_CLEANUP_DIR, MANUAL_CLEANUP_DIR]:
+    dir_path.mkdir(parents=True, exist_ok=True)
 
 # API Configuration
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")

@@ -17,12 +17,13 @@ class DatasetBuilder:
 
     def __init__(self, base_dir: Path = None):
         self.base_dir = base_dir or Path(__file__).parent
-        self.questions_file = self.base_dir / "questions.json"
-        self.dataset_file = self.base_dir / "dataset.json"
-        self.audio_dir = self.base_dir / "audio"
-        self.whisper_dir = self.base_dir / "whisper-transcripts"
-        self.auto_cleanup_dir = self.base_dir / "auto-cleanup"
-        self.manual_cleanup_dir = self.base_dir / "manual-cleanups"
+        self.dataset_dir = self.base_dir / "dataset"
+        self.questions_file = self.dataset_dir / "questions.json"
+        self.dataset_file = self.dataset_dir / "dataset.json"
+        self.audio_dir = self.dataset_dir / "data" / "audio"
+        self.whisper_dir = self.dataset_dir / "data" / "whisper-transcripts"
+        self.auto_cleanup_dir = self.dataset_dir / "data" / "auto-cleanup"
+        self.manual_cleanup_dir = self.dataset_dir / "data" / "manual-cleanups"
 
     def count_words(self, text: str) -> int:
         """Count words in text"""

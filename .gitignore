@@ -10,20 +10,20 @@ ENV/
 .env.local
 
 # Audio Files (large, generated content)
-audio/*.mp3
-audio/*.wav
-audio/*.m4a
-audio/*.ogg
-audio/*.flac
+dataset/data/audio/*.mp3
+dataset/data/audio/*.wav
+dataset/data/audio/*.m4a
+dataset/data/audio/*.ogg
+dataset/data/audio/*.flac
 
 # Generated Transcripts and Cleanups
-whisper-transcripts/*.txt
-auto-cleanup/*.txt
-manual-cleanups/*.txt
+dataset/data/whisper-transcripts/*.txt
+dataset/data/auto-cleanup/*.txt
+dataset/data/manual-cleanups/*.txt
 
 # Generated Dataset Files
-dataset_training.jsonl
-dataset_training.json
+dataset/dataset_training.jsonl
+dataset/dataset_training.json
 
 # Python
 __pycache__/
@@ -49,7 +49,7 @@ build/
 *.log
 
 # Keep directory structure but ignore contents
-!audio/.gitkeep
-!whisper-transcripts/.gitkeep
-!auto-cleanup/.gitkeep
-!manual-cleanups/.gitkeep
+!dataset/data/audio/.gitkeep
+!dataset/data/whisper-transcripts/.gitkeep
+!dataset/data/auto-cleanup/.gitkeep
+!dataset/data/manual-cleanups/.gitkeep
