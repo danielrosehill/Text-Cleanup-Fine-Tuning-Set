@@ -1,5 +1,7 @@
 # Text Cleanup Fine-Tuning Dataset
 
+[![Hugging Face Dataset](https://img.shields.io/badge/🤗%20Hugging%20Face-Dataset-yellow)](https://huggingface.co/datasets/danielrosehill/Transcription-Cleanup-Trainer)
+
 A dataset in progress for fine-tuning models to clean up speech-to-text transcripts.
 
 ## What This Is
