@@ -12,7 +12,7 @@
   {
     "uuid": "b2c4d6e8-1a3f-4b5d-8e7a-2c4f6b8d0e2a",
     "number": 2,
-    "question": "[Question 2 text - please fill in]",
+    "question": "What are your thoughts on work-life balance in the tech industry? How do you personally manage your time between professional projects, personal interests, and rest?",
     "recorded": false,
     "audio_file": null,
     "whisper_transcript": null,
@@ -22,7 +22,7 @@
   {
     "uuid": "c3d5e7f9-2b4a-5c6e-9d8b-3e5a7c9f1d3b",
     "number": 3,
-    "question": "[Question 3 text - please fill in]",
+    "question": "Walk me through how you would explain machine learning and large language models to someone who has no technical background. What analogies or examples would you use?",
     "recorded": false,
     "audio_file": null,
     "whisper_transcript": null,
@@ -32,7 +32,7 @@
   {
     "uuid": "d4e6f8a0-3c5b-6d7f-0e9c-4f6b8d0e2a4c",
     "number": 4,
-    "question": "[Question 4 text - please fill in]",
+    "question": "What's your perspective on the current state of AI development and its impact on creative industries? Do you see it as a tool that enhances human creativity or something that might replace certain creative roles?",
     "recorded": false,
     "audio_file": null,
     "whisper_transcript": null,
@@ -42,7 +42,7 @@
   {
     "uuid": "e5f7a9b1-4d6c-7e8a-1f0d-5a7c9e1f3b5d",
     "number": 5,
-    "question": "[Question 5 text - please fill in]",
+    "question": "Tell me about a memorable travel experience you've had. What made it special, what did you learn from it, and how has it influenced your perspective on life or work?",
     "recorded": false,
     "audio_file": null,
     "whisper_transcript": null,
@@ -52,7 +52,7 @@
   {
     "uuid": "f6a8b0c2-5e7d-8f9b-2a1e-6b8d0f2a4c6e",
     "number": 6,
-    "question": "[Question 6 text - please fill in]",
+    "question": "Describe a challenging technical problem you've encountered recently and how you approached solving it. What resources did you use, and what did you learn from the experience?",
     "recorded": false,
     "audio_file": null,
     "whisper_transcript": null,
@@ -62,7 +62,7 @@
   {
     "uuid": "a7b9c1d3-6f8e-9a0c-3b2f-7c9e1a3d5f7b",
     "number": 7,
-    "question": "[Question 7 text - please fill in]",
+    "question": "Looking ahead to the next 5-10 years, what technological developments do you think will have the biggest impact on how we work and live? What excites you most about these potential changes?",
     "recorded": false,
     "audio_file": null,
     "whisper_transcript": null,
@@ -72,7 +72,7 @@
   {
     "uuid": "b8c0d2e4-7a9f-0b1d-4c3a-8d0f2b4e6a8c",
     "number": 8,
-    "question": "[Question 8 text - please fill in]",
+    "question": "Explain the concept of open source software and why it matters. What role has open source played in your own work, and what are its advantages and potential drawbacks?",
     "recorded": false,
     "audio_file": null,
     "whisper_transcript": null,
@@ -82,7 +82,7 @@
   {
     "uuid": "c9d1e3f5-8b0a-1c2e-5d4b-9e1a3c5f7b9d",
     "number": 9,
-    "question": "[Question 9 text - please fill in]",
+    "question": "If you could design your ideal smart home or workspace from scratch with unlimited resources, what would it look like? What technologies would you incorporate and why?",
     "recorded": false,
     "audio_file": null,
     "whisper_transcript": null,
@@ -92,7 +92,7 @@
   {
     "uuid": "d0e2f4a6-9c1b-2d3f-6e5c-0f2b4d6a8c0e",
     "number": 10,
-    "question": "[Question 10 text - please fill in]",
+    "question": "Reflect on how you've seen the field of technical documentation and communication evolve over your career. What skills do you think are most important for effectively communicating complex technical concepts?",
     "recorded": false,
     "audio_file": null,
     "whisper_transcript": null,
