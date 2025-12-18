@@ -6,6 +6,18 @@ A dataset in progress for fine-tuning models to clean up speech-to-text transcri
 
 A collection of speech transcripts with multiple versions showing different levels of cleanup, intended for fine-tuning models to achieve optimal transcript cleanup ("Goldilocks" level - not too much, not too little).
 
+## Fine-Tuning Objective
+
+The goal is to generate a fine-tuned audio multimodal model (Hugging Face task: audio-text to text) that can automatically produce cleaned transcripts matching the quality and style demonstrated in the manual cleanup examples.
+
+**Dataset Components:**
+- **Audio file**: Source recording (2-5 minutes)
+- **Whisper ASR transcript**: Verbatim baseline showing what NOT to produce (too verbose with filler words)
+- **Auto cleanup transcript**: Guided cleanup from Gemini 2.5 Flash using a general system prompt (shows intermediate cleanup, but not quite right)
+- **Manual cleanup transcript**: Ground truth target demonstrating the desired cleanup quality
+
+The fine-tuned model should learn to transform audio directly into text matching the manual cleanup style - removing filler words and disfluencies while preserving natural tone and meaning.
+
 ## Repository Structure
 
 ```
