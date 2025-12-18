@@ -20,6 +20,12 @@ import requests
 from openai import OpenAI
 from dotenv import load_dotenv
 
+# Import dataset builder
+try:
+    from dataset_builder import DatasetBuilder
+except ImportError:
+    DatasetBuilder = None
+
 # Load environment variables
 load_dotenv()
 
@@ -31,6 +37,7 @@ WHISPER_DIR = BASE_DIR / "whisper-transcripts"
 AUTO_CLEANUP_DIR = BASE_DIR / "auto-cleanup"
 MANUAL_CLEANUP_DIR = BASE_DIR / "manual-cleanups"
 SYSTEM_PROMPT_FILE = BASE_DIR / "system-prompts" / "cleanup.md"
+DATASET_FILE = BASE_DIR / "dataset.json"
 
 # Ensure directories exist
 for dir_path in [AUDIO_DIR, WHISPER_DIR, AUTO_CLEANUP_DIR, MANUAL_CLEANUP_DIR]:
@@ -149,6 +156,7 @@ class TranscriptRecorderGUI:
 
         self.recorder = AudioRecorder()
         self.processor = TranscriptProcessor()
+        self.dataset_builder = DatasetBuilder(BASE_DIR) if DatasetBuilder else None
         self.questions = self.load_questions()
         self.current_question = None
         self.recording = False
@@ -368,8 +376,13 @@ class TranscriptRecorderGUI:
                     break
 
             self.save_questions()
+
+            # Update dataset metadata
+            self.update_dataset()
+
             self.root.after(0, self.refresh_question_list)
             self.log_status(f"✓ Processing complete for Q{self.current_question['number']}")
+            self.log_status(f"✓ Dataset metadata updated")
             self.root.after(0, lambda: self.record_button.config(state=NORMAL))
 
         except Exception as e:
@@ -377,6 +390,14 @@ class TranscriptRecorderGUI:
             self.log_status(f"✗ {error_msg}")
             messagebox.showerror("Processing Error", error_msg)
             self.root.after(0, lambda: self.record_button.config(state=NORMAL))
+
+    def update_dataset(self):
+        """Update dataset.json with latest metadata"""
+        if self.dataset_builder:
+            try:
+                self.dataset_builder.save_dataset()
+            except Exception as e:
+                self.log_status(f"Warning: Could not update dataset metadata: {e}")
 
     def log_status(self, message):
         """Log status message"""

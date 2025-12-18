@@ -31,10 +31,14 @@ The manual ground truth becomes the training target, showing the model exactly t
 ├── system-prompts/           # System prompts for cleanup
 │   └── cleanup.md           # Cleanup instructions for Gemini
 ├── questions.json            # Question database with UUIDs and status
+├── dataset.json              # Complete dataset metadata
 ├── .env                      # API keys (not in git)
 ├── requirements.txt          # Python dependencies
 ├── transcript_recorder.py    # GUI application for recording
-└── process_audio.py          # CLI tool for processing existing audio
+├── dataset_builder.py        # Dataset metadata and export tool
+├── process_audio.py          # CLI tool for processing existing audio
+├── WORKFLOW.md              # Detailed workflow documentation
+└── README.md                # This file
 ```
 
 ## Setup
@@ -106,6 +110,33 @@ This will:
 1. Transcribe the audio with Whisper → `whisper-transcripts/1.txt`
 2. Clean it up with Gemini → `auto-cleanup/1.txt`
 3. Create a blank file → `manual-cleanups/1.txt` (for you to fill)
+
+### Option 3: Dataset Builder & Manager
+
+The dataset builder provides comprehensive dataset management and export capabilities:
+
+```bash
+# Build/update dataset metadata with statistics
+python dataset_builder.py build
+
+# Validate dataset completeness
+python dataset_builder.py validate
+
+# View progress summary
+python dataset_builder.py summary
+
+# Export training-ready dataset
+python dataset_builder.py export jsonl   # or 'json'
+```
+
+The dataset builder:
+- Tracks all samples with comprehensive metadata
+- Calculates word counts and statistics
+- Validates completeness
+- Exports training-ready datasets in JSONL or JSON format
+- Maintains version information and model details
+
+**See [WORKFLOW.md](WORKFLOW.md) for detailed documentation.**
 
 ## Question Management
 
@@ -240,12 +271,15 @@ I've gravitated toward using voice for initial project specifications because...
 
 ## Future Enhancements
 
+- [x] Export training dataset in common formats (JSONL, JSON)
+- [x] Dataset validation and completeness checking
+- [x] Comprehensive metadata tracking (word counts, models, etc.)
 - [ ] Batch processing for multiple audio files
-- [ ] Export training dataset in common formats (JSONL, CSV)
 - [ ] Audio quality metrics and validation
-- [ ] Transcript comparison/diff view
-- [ ] Automated evaluation metrics
+- [ ] Transcript comparison/diff view in GUI
+- [ ] Automated evaluation metrics (BLEU, ROUGE, etc.)
 - [ ] Support for additional transcription services
+- [ ] Manual cleanup editor built into GUI
 
 ## License
 

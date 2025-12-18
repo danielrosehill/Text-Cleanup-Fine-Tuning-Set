@@ -21,6 +21,10 @@ whisper-transcripts/*.txt
 auto-cleanup/*.txt
 manual-cleanups/*.txt
 
+# Generated Dataset Files
+dataset_training.jsonl
+dataset_training.json
+
 # Python
 __pycache__/
 *.py[cod]

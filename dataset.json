@@ -1,0 +1,332 @@
+{
+  "metadata": {
+    "name": "Text Cleanup Fine-Tuning Dataset",
+    "description": "Dataset for fine-tuning speech-to-text cleanup models",
+    "version": "1.0.0",
+    "created": "2025-12-18T13:02:36.230926",
+    "author": "Daniel Rosehill",
+    "license": "Private"
+  },
+  "statistics": {
+    "total_samples": 10,
+    "recorded_samples": 0,
+    "completed_samples": 1,
+    "completion_percentage": 10.0
+  },
+  "configuration": {
+    "transcription_model": "openai/whisper-1",
+    "cleanup_model": "google/gemini-2.5-flash",
+    "audio_format": "wav",
+    "audio_sample_rate": 44100
+  },
+  "samples": [
+    {
+      "id": "a7f3e9d1-8c4b-4e5a-9f2d-1a3b5c7d9e0f",
+      "sample_number": 1,
+      "question": "Describe your typical workflow when starting a new software development project. What are the first steps you take, what tools do you set up, and how do you organize your work?",
+      "recorded": false,
+      "files": {
+        "audio": "audio/1.mp3",
+        "whisper_transcript": "whisper-transcripts/1.txt",
+        "auto_cleanup": "auto-cleanup/1.txt",
+        "manual_cleanup": "manual-cleanups/1.txt"
+      },
+      "audio_metadata": {
+        "duration_seconds": 367.4433333333333,
+        "format": "mp3",
+        "sample_rate": 44100
+      },
+      "text_statistics": {
+        "whisper_word_count": 911,
+        "auto_cleanup_word_count": 891,
+        "manual_cleanup_word_count": 859
+      },
+      "models": {
+        "transcription": "openai/whisper-1",
+        "auto_cleanup": "google/gemini-2.5-flash"
+      },
+      "status": {
+        "has_audio": true,
+        "has_whisper_transcript": true,
+        "has_auto_cleanup": true,
+        "has_manual_cleanup": true,
+        "is_complete": true
+      },
+      "content": {
+        "whisper_transcript": "So, the typical way that I would develop software, okay, over the course of the past year, working with AI agents very extensively, daily and intensively, my method has kind of come to be shaped by them, which doesn't necessarily mean that this is my method across the board. Like it's something that, because I've seen that this is how to get to success, I've kind of shifted my workflow accordingly, but it's not necessarily how I would always approach projects. But in any case, within the narrow realm, let's say, of at least agentic-assisted, AI-assisted development, then we can say that this is the current workflow. So basically, what I've gravitated towards is using voice, because this really began approximately this time last year. I realized that voice is quicker than text entry, to state the obvious, but that when you're using AI tools to work on a project, the key is gathering up, giving that context data for the project. And I was going to say that it's an alternative to RAG and context management, except that it's not. That remains very useful in sort of general AI day-to-day work and prompting, you want to have something that knows you. But if it's a software development project, much of that context is really ab initio. There's no context data that's really going to help besides maybe knowledge of your preferred workflows. It's from scratch. This is what I want to find in the project. So the reason that voice is so essential here is because what I realized is that if you can record 10 minutes of information and get in all the gritty details of what you're looking for, what you're not looking for, that makes a vast difference. Because the AI tool starts from a very rounded understanding of the project, what it's to do, what it's not to do, and it's never a set it and forget it, if you use that expression. But it's much closer to it. You find yourself spending far less time saying, no, no, no, that's not what I wanted at all. You've gone in the wrong direction. And then you're thinking yourself, wait, didn't I say that? And you realize, no, humans naturally don't. It's not a human tendency to state everything with maximum specificity. You don't tell if I say, if I ask my wife, please buy pita bread, I don't say, please go to the market and buy six pita breads that are wrapped in plastic. That was a stupid example, but, and that's the thing, to minimize ambiguity, AI systems do want that kind of strange communication. So that's where this becomes really useful. So what I will do in practice, and that's why I'm explaining the voice stuff, I'll start with a voice recording. And this is where the workflow depends. Right now, for example, I'm actually recording this file in Audacity and saving it into a repository. That's a very manual method. In other methods, I've experimented with kind of more elegant workflows, but it doesn't really matter, is the truth. It's just about getting the audio captured, however you can find a way to do that. Then I run that through a transcription tool to do some cleanup, to say, organize this a bit, and this is actually what the repository that I referred to, I'm thinking it might be possible to fine tune an audio multimodal for exactly the level of transcription I want, which is the Goldilocks problem of this. You don't want it to go too far, you don't want it to go not far enough. What I'll typically do then is transcribe it and say, save this audio file as, I usually ask it to do two things, raw and spec. Raw means, raw is just kind of security, it's a backup of sorts. It's like if the, just in case the AI butchers the cleanup version, we have a capture of what was actually said without needing to listen back to the audio, but it's only for that purpose. And then working on the development workflow with it, between turns, between sprints, saying build this, and then debugging, like going into the code. Some coding languages, it's fully agentic in the sense that I don't know the languages myself. In other cases, working with WordPress or Python, I have some grounding, at least in the languages, and I can kind of do a little bit of tweaks and touch-ups, but more than that actually, it's evolving into me being there in a supervisory and ideation capacity, which sounds really lame, but it's kind of like thinking, wait, what stack are we using? Does this make sense? Does this approach make sense? Could we do it this way? And then the birth of code generation happen, the agents doing that. And I actually love this approach because it's much more fun for me to think about what we're building and how we're going to build this than it is to sit there writing lines of code, which is, I think the kind of, I'm sure a lot of people maybe enjoy that stuff, but I don't personally. So that's kind of the development process. And then it's testing and debugging and iterating upon features. And mostly so far, it's been used for my own personal tools, but I'm working on a couple of broader projects at the moment as well.",
+        "auto_cleanup": "The typical way that I would develop software, over the course of the past year, working with AI agents very extensively, daily, and intensively, my method has come to be shaped by them. This doesn't necessarily mean that this is my method across the board. It's something that, because I've seen that this is how to get to success, I've shifted my workflow accordingly. But it's not necessarily how I would always approach projects. In any case, within the narrow realm, let's say, of at least agentic-assisted, AI-assisted development, we can say that this is the current workflow.\n\nBasically, what I've gravitated towards is using voice because this really began approximately this time last year. I realized that voice is quicker than text entry, to state the obvious. But when you're using AI tools to work on a project, the key is gathering up and giving that context data for the project. I was going to say that it's an alternative to RAG and context management, except that it's not. That remains very useful in general AI day-to-day work and prompting; you want to have something that knows you. But if it's a software development project, much of that context is really ab initio. There's no context data that's really going to help besides maybe knowledge of your preferred workflows. It's from scratch. This is what I want to find in the project.\n\nThe reason that voice is so essential here is because what I realized is that if you can record 10 minutes of information and get in all the gritty details of what you're looking for and what you're not looking for, that makes a vast difference. Because the AI tool starts from a very rounded understanding of the project, what it's to do, what it's not to do, and it's never a \"set it and forget it,\" if you use that expression. But it's much closer to it. You find yourself spending far less time saying, \"No, no, no, that's not what I wanted at all. You've gone in the wrong direction.\" And then you're thinking to yourself, \"Wait, didn't I say that?\" And you realize, \"No, humans naturally don't.\" It's not a human tendency to state everything with maximum specificity. You don't tell, if I say, if I ask my wife, \"Please buy pita bread,\" I don't say, \"Please go to the market and buy six pita breads that are wrapped in plastic.\" That was a stupid example. And that's the thing: to minimize ambiguity, AI systems do want that kind of strange communication. So that's where this becomes really useful.\n\nWhat I will do in practice, and that's why I'm explaining the voice stuff, I'll start with a voice recording. And this is where the workflow depends. Right now, for example, I'm actually recording this file in Audacity and saving it into a repository. That's a very manual method. In other methods, I've experimented with more elegant workflows, but it doesn't really matter, is the truth. It's just about getting the audio captured, however you can find a way to do that. Then I run that through a transcription tool to do some cleanup, to say, \"Organize this a bit.\" And this is actually what the repository that I referred to, I'm thinking it might be possible to fine-tune an audio multimodal for exactly the level of transcription I want, which is the Goldilocks problem of this. You don't want it to go too far; you don't want it to go not far enough.\n\nWhat I'll typically do then is transcribe it and say, \"Save this audio file as.\" I usually ask it to do two things: \"raw\" and \"spec.\" \"Raw\" means it's just kind of security; it's a backup of sorts. It's like if, just in case the AI butchers the cleanup version, we have a capture of what was actually said without needing to listen back to the audio. But it's only for that purpose. And then working on the development workflow with it, between turns, between sprints, saying, \"Build this,\" and then debugging, like going into the code. Some coding languages, it's fully agentic in the sense that I don't know the languages myself. In other cases, working with WordPress or Python, I have some grounding, at least, in the languages. And I can kind of do a little bit of tweaks and touch-ups. But more than that, actually, it's evolving into me being there in a supervisory and ideation capacity, which sounds really lame. But it's kind of like thinking, \"Wait, what stack are we using? Does this make sense? Does this approach make sense? Could we do it this way?\" And then the birth of code generation happens, the agents doing that. And I actually love this approach because it's much more fun for me to think about what we're building and how we're going to build this than it is to sit there writing lines of code, which is, I think, the kind of—I'm sure a lot of people maybe enjoy that stuff, but I don't personally. So that's kind of the development process. And then it's testing and debugging and iterating upon features. And mostly so far, it's been used for my own personal tools, but I'm working on a couple of broader projects at the moment as well.",
+        "manual_cleanup": "Over the course of the past year, during which I have worked with AI systems very extensively, my development method has come to be shaped by using them. \n\nThis doesn't necessarily mean that this is the method I woud use across the board. \n\nRather, it means that because I've seen that this is how to get to success, I've shifted my workflow accordingly.\n\nHowever, it's not necessarily how I would always approach projects. \n\nBut within the narrow realm lof agentic OR AI-assisted development, this is the current workflow. \n\nI've gravitated to using voice.  This began approximately this time last year. I realized that voice is quicker than text entry - to state the obvious. \n\nBut that when you're using AI tools to work on a project, the key is gathering up that context data for the project. I was going to say that it's an alternative to RAG and context management, except that it's not!\n\nRAG remains very useful in general AI day-to-day work and prompting. You want to have something that knows you. \n\nBut if it's a software development project, much of that context is really ab initio. \n\nThere's no context data that's really going to help besides maybe knowledge of your preferred workflows. It's from scratch. This is what I want to find in the project. \n\nSo the reason that voice is so essential here is because I realized that if you can record 10 minutes of information and get in all the gritty details of what you're looking for, what you're not looking fo - that that makes a vast difference. \n\nBecause the AI tool starts from a very rounded understanding of the project: what it's to do, what it's not to do. It's never \"set it and forget it,\" if you use that expression. But it's much closer to it. You find yourself spending far less time saying (to the AI tool), \"no, no, no, that's not what I wanted at all. You've gone in the wrong direction.\" \n\nAnd then you're thinking yourself, \"wait, didn't I say that?\" And you realize, no, humans naturally don't. It's not a human tendency to state everything with maximum specificity. \n\nIf I ask my wife, \"please buy pita bread,\" I don't say, \"please go to the market and buy six pita breads that are wrapped in plastic.\" \n\nTo minimize ambiguity, AI systems do want that kind of strange communication. \n\nSo that's where this becomes really useful. \n\nSo what I will do in practice - and that's why I'm explaining the voice stuff - is that I'll start with a voice recording. Right now, for example, I'm actually recording this file in Audacity and saving it into a repository. That's a very manual method. In other methods, I've experimented more elegant workflows. But it doesn't really matter. It's just about getting the audio captured, however you can find a way to do that. \n\nThen I run that through a transcription tool to do some cleanup, to say, \"organize this a bit!\"\n\nAnd this is actually what the repository that I referred to is there for.\n\nI'm thinking it might be possible to fine tune an audio multimodal for exactly the level of transcription I want. This is the Goldilocks problem of this. You don't want it (AI) to go too far but you don't want it to go not far enough. \n\nWhat I'll typically do is transcribe my file. I usually ask it to do two things: raw and spec. \n\nThe raw transcript is just kind of security. It's a backup of sorts. It's like \"just in case the AI butchers the cleanup version, we have a capture of what was actually said without needing to listen back to the audio.\" But it's only for that purpose. \n\nAnd then working on the development workflow with it, between turns, between sprints, saying \"build this\", and then debugging, like going into the code. \n\nWhen working with some coding languages, it's fully agentic in the sense that I don't know the languages myself. In other cases, working with WordPress or Python, I have some grounding, at least, in the languages, and I can kind of do a little bit of tweaks and touch-ups.\n\nBut more than that actually, it's evolving into me being there in a supervisory and ideation capacity (which sounds really lame!) \n\nBut it's kind of like thinking, \"wait, what stack are we using? Does this make sense? Does this approach make sense? Could we do it this way?\" \n\nAnd then hard work of code generation happens with the agents doing that. \n\nAnd I actually love this approach because it's much more fun for me to think about what we're building and how we're going to build this than it is to sit there writing lines of code, which is, I think ... I'm sure a lot of people maybe enjoy that stuff, but I don't personally. \n\nSo that's kind of summarises the development process. \n\nAnd then it's testing and debugging and iterating upon features. \n\nAnd mostly so far, it's been used for my own personal tools. But I'm working on a couple of broader projects at the moment as well."
+      }
+    },
+    {
+      "id": "b2c4d6e8-1a3f-4b5d-8e7a-2c4f6b8d0e2a",
+      "sample_number": 2,
+      "question": "What are your thoughts on work-life balance in the tech industry? How do you personally manage your time between professional projects, personal interests, and rest?",
+      "recorded": false,
+      "files": {
+        "audio": null,
+        "whisper_transcript": null,
+        "auto_cleanup": null,
+        "manual_cleanup": null
+      },
+      "audio_metadata": null,
+      "text_statistics": {
+        "whisper_word_count": null,
+        "auto_cleanup_word_count": null,
+        "manual_cleanup_word_count": null
+      },
+      "models": {
+        "transcription": "openai/whisper-1",
+        "auto_cleanup": "google/gemini-2.5-flash"
+      },
+      "status": {
+        "has_audio": false,
+        "has_whisper_transcript": false,
+        "has_auto_cleanup": false,
+        "has_manual_cleanup": false,
+        "is_complete": false
+      },
+      "content": {}
+    },
+    {
+      "id": "c3d5e7f9-2b4a-5c6e-9d8b-3e5a7c9f1d3b",
+      "sample_number": 3,
+      "question": "Walk me through how you would explain machine learning and large language models to someone who has no technical background. What analogies or examples would you use?",
+      "recorded": false,
+      "files": {
+        "audio": null,
+        "whisper_transcript": null,
+        "auto_cleanup": null,
+        "manual_cleanup": null
+      },
+      "audio_metadata": null,
+      "text_statistics": {
+        "whisper_word_count": null,
+        "auto_cleanup_word_count": null,
+        "manual_cleanup_word_count": null
+      },
+      "models": {
+        "transcription": "openai/whisper-1",
+        "auto_cleanup": "google/gemini-2.5-flash"
+      },
+      "status": {
+        "has_audio": false,
+        "has_whisper_transcript": false,
+        "has_auto_cleanup": false,
+        "has_manual_cleanup": false,
+        "is_complete": false
+      },
+      "content": {}
+    },
+    {
+      "id": "d4e6f8a0-3c5b-6d7f-0e9c-4f6b8d0e2a4c",
+      "sample_number": 4,
+      "question": "What's your perspective on the current state of AI development and its impact on creative industries? Do you see it as a tool that enhances human creativity or something that might replace certain creative roles?",
+      "recorded": false,
+      "files": {
+        "audio": null,
+        "whisper_transcript": null,
+        "auto_cleanup": null,
+        "manual_cleanup": null
+      },
+      "audio_metadata": null,
+      "text_statistics": {
+        "whisper_word_count": null,
+        "auto_cleanup_word_count": null,
+        "manual_cleanup_word_count": null
+      },
+      "models": {
+        "transcription": "openai/whisper-1",
+        "auto_cleanup": "google/gemini-2.5-flash"
+      },
+      "status": {
+        "has_audio": false,
+        "has_whisper_transcript": false,
+        "has_auto_cleanup": false,
+        "has_manual_cleanup": false,
+        "is_complete": false
+      },
+      "content": {}
+    },
+    {
+      "id": "e5f7a9b1-4d6c-7e8a-1f0d-5a7c9e1f3b5d",
+      "sample_number": 5,
+      "question": "Tell me about a memorable travel experience you've had. What made it special, what did you learn from it, and how has it influenced your perspective on life or work?",
+      "recorded": false,
+      "files": {
+        "audio": null,
+        "whisper_transcript": null,
+        "auto_cleanup": null,
+        "manual_cleanup": null
+      },
+      "audio_metadata": null,
+      "text_statistics": {
+        "whisper_word_count": null,
+        "auto_cleanup_word_count": null,
+        "manual_cleanup_word_count": null
+      },
+      "models": {
+        "transcription": "openai/whisper-1",
+        "auto_cleanup": "google/gemini-2.5-flash"
+      },
+      "status": {
+        "has_audio": false,
+        "has_whisper_transcript": false,
+        "has_auto_cleanup": false,
+        "has_manual_cleanup": false,
+        "is_complete": false
+      },
+      "content": {}
+    },
+    {
+      "id": "f6a8b0c2-5e7d-8f9b-2a1e-6b8d0f2a4c6e",
+      "sample_number": 6,
+      "question": "Describe a challenging technical problem you've encountered recently and how you approached solving it. What resources did you use, and what did you learn from the experience?",
+      "recorded": false,
+      "files": {
+        "audio": null,
+        "whisper_transcript": null,
+        "auto_cleanup": null,
+        "manual_cleanup": null
+      },
+      "audio_metadata": null,
+      "text_statistics": {
+        "whisper_word_count": null,
+        "auto_cleanup_word_count": null,
+        "manual_cleanup_word_count": null
+      },
+      "models": {
+        "transcription": "openai/whisper-1",
+        "auto_cleanup": "google/gemini-2.5-flash"
+      },
+      "status": {
+        "has_audio": false,
+        "has_whisper_transcript": false,
+        "has_auto_cleanup": false,
+        "has_manual_cleanup": false,
+        "is_complete": false
+      },
+      "content": {}
+    },
+    {
+      "id": "a7b9c1d3-6f8e-9a0c-3b2f-7c9e1a3d5f7b",
+      "sample_number": 7,
+      "question": "Looking ahead to the next 5-10 years, what technological developments do you think will have the biggest impact on how we work and live? What excites you most about these potential changes?",
+      "recorded": false,
+      "files": {
+        "audio": null,
+        "whisper_transcript": null,
+        "auto_cleanup": null,
+        "manual_cleanup": null
+      },
+      "audio_metadata": null,
+      "text_statistics": {
+        "whisper_word_count": null,
+        "auto_cleanup_word_count": null,
+        "manual_cleanup_word_count": null
+      },
+      "models": {
+        "transcription": "openai/whisper-1",
+        "auto_cleanup": "google/gemini-2.5-flash"
+      },
+      "status": {
+        "has_audio": false,
+        "has_whisper_transcript": false,
+        "has_auto_cleanup": false,
+        "has_manual_cleanup": false,
+        "is_complete": false
+      },
+      "content": {}
+    },
+    {
+      "id": "b8c0d2e4-7a9f-0b1d-4c3a-8d0f2b4e6a8c",
+      "sample_number": 8,
+      "question": "Explain the concept of open source software and why it matters. What role has open source played in your own work, and what are its advantages and potential drawbacks?",
+      "recorded": false,
+      "files": {
+        "audio": null,
+        "whisper_transcript": null,
+        "auto_cleanup": null,
+        "manual_cleanup": null
+      },
+      "audio_metadata": null,
+      "text_statistics": {
+        "whisper_word_count": null,
+        "auto_cleanup_word_count": null,
+        "manual_cleanup_word_count": null
+      },
+      "models": {
+        "transcription": "openai/whisper-1",
+        "auto_cleanup": "google/gemini-2.5-flash"
+      },
+      "status": {
+        "has_audio": false,
+        "has_whisper_transcript": false,
+        "has_auto_cleanup": false,
+        "has_manual_cleanup": false,
+        "is_complete": false
+      },
+      "content": {}
+    },
+    {
+      "id": "c9d1e3f5-8b0a-1c2e-5d4b-9e1a3c5f7b9d",
+      "sample_number": 9,
+      "question": "If you could design your ideal smart home or workspace from scratch with unlimited resources, what would it look like? What technologies would you incorporate and why?",
+      "recorded": false,
+      "files": {
+        "audio": null,
+        "whisper_transcript": null,
+        "auto_cleanup": null,
+        "manual_cleanup": null
+      },
+      "audio_metadata": null,
+      "text_statistics": {
+        "whisper_word_count": null,
+        "auto_cleanup_word_count": null,
+        "manual_cleanup_word_count": null
+      },
+      "models": {
+        "transcription": "openai/whisper-1",
+        "auto_cleanup": "google/gemini-2.5-flash"
+      },
+      "status": {
+        "has_audio": false,
+        "has_whisper_transcript": false,
+        "has_auto_cleanup": false,
+        "has_manual_cleanup": false,
+        "is_complete": false
+      },
+      "content": {}
+    },
+    {
+      "id": "d0e2f4a6-9c1b-2d3f-6e5c-0f2b4d6a8c0e",
+      "sample_number": 10,
+      "question": "Reflect on how you've seen the field of technical documentation and communication evolve over your career. What skills do you think are most important for effectively communicating complex technical concepts?",
+      "recorded": false,
+      "files": {
+        "audio": null,
+        "whisper_transcript": null,
+        "auto_cleanup": null,
+        "manual_cleanup": null
+      },
+      "audio_metadata": null,
+      "text_statistics": {
+        "whisper_word_count": null,
+        "auto_cleanup_word_count": null,
+        "manual_cleanup_word_count": null
+      },
+      "models": {
+        "transcription": "openai/whisper-1",
+        "auto_cleanup": "google/gemini-2.5-flash"
+      },
+      "status": {
+        "has_audio": false,
+        "has_whisper_transcript": false,
+        "has_auto_cleanup": false,
+        "has_manual_cleanup": false,
+        "is_complete": false
+      },
+      "content": {}
+    }
+  ]
+}
