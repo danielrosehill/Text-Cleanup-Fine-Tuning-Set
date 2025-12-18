@@ -127,7 +127,6 @@ class DatasetBuilder:
                 "is_complete": all([
                     audio_path.exists(),
                     whisper_path.exists() and bool(whisper_text),
-                    auto_cleanup_path.exists() and bool(auto_cleanup_text),
                     manual_cleanup_path.exists() and bool(manual_cleanup_text),
                 ])
             },
@@ -232,8 +231,7 @@ class DatasetBuilder:
                 sample_report['errors'].append("Missing audio file")
             if not sample['status']['has_whisper_transcript']:
                 sample_report['errors'].append("Missing Whisper transcript")
-            if not sample['status']['has_auto_cleanup']:
-                sample_report['errors'].append("Missing auto cleanup")
+            # Note: auto_cleanup is optional (only sample 1 has it as a reference)
             if not sample['status']['has_manual_cleanup']:
                 sample_report['warnings'].append("Missing manual cleanup (ground truth)")
 

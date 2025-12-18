@@ -12,11 +12,12 @@ The goal is to generate a fine-tuned audio multimodal model (Hugging Face task: 
 
 **Dataset Components:**
 - **Audio file**: Source recording (2-5 minutes)
-- **Whisper ASR transcript**: Verbatim baseline showing what NOT to produce (too verbose with filler words)
-- **Auto cleanup transcript**: Guided cleanup from Gemini 2.5 Flash using a general system prompt (shows intermediate cleanup, but not quite right)
+- **Whisper ASR transcript**: Verbatim baseline from speech-to-text (includes all filler words and disfluencies)
 - **Manual cleanup transcript**: Ground truth target demonstrating the desired cleanup quality
 
 The fine-tuned model should learn to transform audio directly into text matching the manual cleanup style - removing filler words and disfluencies while preserving natural tone and meaning.
+
+**Note:** Sample 1 includes an auto-cleanup transcript from Gemini 2.5 Flash as a reference example, showing the deviation between a general-purpose model and the target cleanup quality. This helps illustrate why fine-tuning is necessary. Future samples will only include audio, Whisper transcript, and manual cleanup.
 
 ## Repository Structure
 
@@ -46,8 +47,7 @@ Each sample goes through this process:
 
 1. **Audio Recording** - Voice response to a question (2-5 minutes)
 2. **Whisper Transcription** - Raw ASR output with filler words and disfluencies
-3. **Auto Cleanup** - Gemini 2.5 Flash attempts cleanup
-4. **Manual Cleanup** - Human-edited ground truth showing target quality
+3. **Manual Cleanup** - Human-edited ground truth showing target quality
 
 The manual cleanup is the training target, demonstrating the desired level of cleanup.
 

@@ -103,14 +103,7 @@ def process_audio_file(audio_path):
             f.write(transcript)
         print(f"✓ Whisper transcript saved: {whisper_path}")
 
-        # Step 2: Gemini cleanup
-        cleaned = cleanup_transcript(transcript, system_prompt)
-        auto_cleanup_path = AUTO_CLEANUP_DIR / f"{base_name}.txt"
-        with open(auto_cleanup_path, 'w') as f:
-            f.write(cleaned)
-        print(f"✓ Auto cleanup saved: {auto_cleanup_path}")
-
-        # Step 3: Create blank manual cleanup file
+        # Step 2: Create blank manual cleanup file
         manual_cleanup_path = MANUAL_CLEANUP_DIR / f"{base_name}.txt"
         if not manual_cleanup_path.exists():
             with open(manual_cleanup_path, 'w') as f:
@@ -122,8 +115,7 @@ def process_audio_file(audio_path):
         print(f"\n✓ Processing complete!")
         print(f"\nNext steps:")
         print(f"1. Review Whisper transcript: {whisper_path}")
-        print(f"2. Review auto cleanup: {auto_cleanup_path}")
-        print(f"3. Create your manual cleanup: {manual_cleanup_path}")
+        print(f"2. Create your manual cleanup: {manual_cleanup_path}")
 
         return True
 

@@ -349,16 +349,6 @@ class TranscriptRecorderGUI:
                 f.write(transcript)
             self.log_status(f"Whisper transcript saved: {whisper_path.name}")
 
-            # Gemini cleanup
-            self.log_status("Cleaning up transcript with Gemini...")
-            cleaned = self.processor.cleanup_transcript(transcript)
-
-            # Save auto cleanup
-            auto_cleanup_path = AUTO_CLEANUP_DIR / f"{uuid}.txt"
-            with open(auto_cleanup_path, 'w') as f:
-                f.write(cleaned)
-            self.log_status(f"Auto cleanup saved: {auto_cleanup_path.name}")
-
             # Create blank manual cleanup file
             manual_cleanup_path = MANUAL_CLEANUP_DIR / f"{uuid}.txt"
             if not manual_cleanup_path.exists():
@@ -372,7 +362,6 @@ class TranscriptRecorderGUI:
                     q['recorded'] = True
                     q['audio_file'] = str(audio_path)
                     q['whisper_transcript'] = str(whisper_path)
-                    q['auto_cleanup'] = str(auto_cleanup_path)
                     q['manual_cleanup'] = str(manual_cleanup_path)
                     break
 
